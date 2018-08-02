@@ -78,6 +78,7 @@ public class SliderAdapter extends PagerAdapter implements BaseSliderView.ImageL
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
         BaseSliderView b = mImageContents.get(position);
+        b.empty(R.drawable.abc_ab_share_pack_mtrl_alpha);
         View v = b.getView();
         container.addView(v);
         return v;
