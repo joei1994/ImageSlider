@@ -204,7 +204,7 @@ public class SliderLayout extends RelativeLayout{
         });
 
         attributes.recycle();
-        setPresetIndicator(PresetIndicators.Center_Bottom);
+        setPresetIndicator(PresetIndicators.Center_Bottom_Rect);
         setPresetTransformer(mTransformerId);
         setSliderTransformDuration(mTransformerSpan,null);
         setIndicatorVisibility(mIndicatorVisibility);
@@ -558,6 +558,7 @@ public class SliderLayout extends RelativeLayout{
 
     public enum PresetIndicators{
         Center_Bottom("Center_Bottom",R.id.default_center_bottom_indicator),
+        Center_Bottom_Rect("Center_Bottom_Rect", R.id.default_center_bottom_rect_indicator),
         Right_Bottom("Right_Bottom",R.id.default_bottom_right_indicator),
         Left_Bottom("Left_Bottom",R.id.default_bottom_left_indicator),
         Center_Top("Center_Top",R.id.default_center_top_indicator),

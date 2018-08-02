@@ -17,6 +17,27 @@
         custom:shape="oval"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
+    <com.daimajia.slider.library.Indicators.PagerIndicator
+        android:id="@+id/default_center_bottom_rect_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        custom:selected_color="#000000"
+        custom:unselected_color="#a4a4a4"
+        custom:shape="rect"
+        custom:selected_padding_left="2dp"
+        custom:selected_padding_right="2dp"
+        custom:unselected_padding_left="2dp"
+        custom:unselected_padding_right="2dp"
+        custom:selected_width="24dp"
+        custom:selected_height="4dp"
+        custom:unselected_width="24dp"
+        custom:unselected_height="4dp"
+        />
     <com.daimajia.slider.library.Indicators.PagerIndicator
         android:id="@+id/default_bottom_right_indicator"
         android:layout_alignParentBottom="true"
