@@ -14,13 +14,14 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.daimajia.slider.library.Indicators.PagerIndicator;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 
 public class MainActivity extends ActionBarActivity implements BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener{
@@ -39,18 +40,29 @@ public class MainActivity extends ActionBarActivity implements BaseSliderView.On
         url_maps.put("House of Cards", "http://cdn3.nflximg.net/images/3093/2043093.jpg");
         url_maps.put("Game of Thrones", "http://images.boomsbeat.com/data/images/full/19640/game-of-thrones-season-4-jpg.jpg");
 
+        List<String> file_mao = new ArrayList<>();
+        file_mao.add("1");
+
         HashMap<String,Integer> file_maps = new HashMap<String, Integer>();
         file_maps.put("Hannibal",R.drawable.hannibal);
         file_maps.put("Big Bang Theory",R.drawable.bigbang);
         file_maps.put("House of Cards",R.drawable.house);
-        file_maps.put("Game of Thrones", R.drawable.game_of_thrones);
+        file_maps.put("1", R.drawable.game_of_thrones);
+        file_maps.put("2", R.drawable.game_of_thrones);
+        file_maps.put("3", R.drawable.game_of_thrones);
+        file_maps.put("4", R.drawable.game_of_thrones);
+        file_maps.put("5", R.drawable.game_of_thrones);
+        file_maps.put("6", R.drawable.game_of_thrones);
+        file_maps.put("7", R.drawable.game_of_thrones);
+        file_maps.put("8", R.drawable.game_of_thrones);
+        file_maps.put("9", R.drawable.game_of_thrones);
 
-        for(String name : file_maps.keySet()){
+        for(String name : url_maps.keySet()){
             TextSliderView textSliderView = new TextSliderView(this);
             // initialize a SliderLayout
             textSliderView
                     .description(name)
-                    .image(file_maps.get(name))
+                    .image(url_maps.get(name))
                     .setScaleType(BaseSliderView.ScaleType.Fit)
                     .setOnSliderClickListener(this);
 
@@ -61,8 +73,7 @@ public class MainActivity extends ActionBarActivity implements BaseSliderView.On
 
            mDemoSlider.addSlider(textSliderView);
         }
-        mDemoSlider.setPresetTransformer(SliderLayout.Transformer.Accordion);
-        mDemoSlider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
+
         mDemoSlider.setDuration(4000);
         mDemoSlider.addOnPageChangeListener(this);
         ListView l = (ListView)findViewById(R.id.transformers);
@@ -74,8 +85,6 @@ public class MainActivity extends ActionBarActivity implements BaseSliderView.On
                 Toast.makeText(MainActivity.this, ((TextView) view).getText().toString(), Toast.LENGTH_SHORT).show();
             }
         });
-
-
     }
 
     @Override
@@ -101,7 +110,7 @@ public class MainActivity extends ActionBarActivity implements BaseSliderView.On
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.action_custom_indicator:
-                mDemoSlider.setCustomIndicator((PagerIndicator) findViewById(R.id.custom_indicator));
+
                 break;
             case R.id.action_custom_child_animation:
                 break;
